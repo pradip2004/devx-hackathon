@@ -24,7 +24,7 @@ const Theme = () => {
             }
       ]
       return (
-            <div className='w-full h-screen relative'>
+            <div className='w-full min-h-screen relative'>
                   <div className='w-full h-screen flex flex-col items-center  p-32 absolute z-10  bg-[rgb(74,32,138)] inset-0 bg-blend-overlay [mask-image:radial-gradient(80%_30%_at_50%_55%,black,transparent_100%)]' style={{
                         backgroundImage: `url(${gridBg})`
                   }}>

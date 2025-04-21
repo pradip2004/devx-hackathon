@@ -5,6 +5,9 @@ import { Home, Archive, User, Settings, Sparkles } from 'lucide-react'
 import { Scroller } from './components/Scroller'
 import Line from './pages/Line'
 import Theme from './pages/Theme'
+import Prize from './pages/Prize'
+import Timeline from './pages/Timeline'
+import Submission from './pages/Submission'
 const App = () => {
   const items = [
     { icon: <Home size={18} className='text-white' />, label: 'Home', onClick: () => alert('Home!') },
@@ -13,7 +16,7 @@ const App = () => {
     { icon: <Settings size={18} className='text-white' />, label: 'Settings', onClick: () => alert('Settings!') },
   ];
 
-  // Example of using arrays of text and React elements for the Scroller
+  
   const scrollerTexts = [
     ['sponsor', 'name', <div className="inline-block w-10 h-10 bg-purple-500 rounded-full mx-1"></div>]
   ];
@@ -38,6 +41,12 @@ const App = () => {
       <Line />
 
       <Theme />
+
+      <Prize />
+
+      <Timeline />
+
+      <Submission />
     </div>
   )
 }
