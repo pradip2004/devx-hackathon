@@ -1,7 +1,7 @@
 import React from 'react'
 import gridBg from '../assets/grid-lines.png'
 import Title from '../components/Title'
-import { div } from 'framer-motion/client'
+import { motion } from 'framer-motion'
 import ThemeCard from '../components/ThemeCard'
 import { Code, Star } from 'lucide-react'
 

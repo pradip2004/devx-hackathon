@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Stepper, { Step } from '../components/Stepper';
 import { Check, Trash2 } from 'lucide-react';
 import Orb from '../components/Orb';
-import { tr } from 'framer-motion/client';
 
 const Submission = () => {
     const [submissionStatus, setSubmissionStatus] = useState(false);
