@@ -56,7 +56,7 @@ const Title = ({
   return (
     <p
       ref={ref}
-      className={`split-parent overflow-hidden inline ${className}`}
+      className={`split-parent overflow-hidden inline font-family-quicksand ${className}`}
       style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
     >
       {words.map((word, wordIndex) => (

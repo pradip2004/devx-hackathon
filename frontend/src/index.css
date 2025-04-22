@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
+  --font-family-winky: 'Winky Sans', sans-serif;
+  --font-family-quicksand: 'Quicksand', sans-serif;
 }
 
 @keyframes star-movement-bottom {

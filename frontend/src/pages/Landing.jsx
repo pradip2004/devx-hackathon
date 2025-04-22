@@ -57,8 +57,8 @@ const Landing = () => {
                         <div className="absolute h-2 w-2 left-full bg-white/20 rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                   </motion.div>
                   <div className=' w-full h-full flex flex-col  items-center justify-center relative mt-16'>
-                        <h1 className='text-8xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138))] text-transparent bg-clip-text'>Hackathon</h1>
-                        <p className='text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h1 className='text-5xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138))] text-transparent bg-clip-text font-family-quicksand uppercase'>Hackathon</h1>
+                        <p className='text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto font-family-winky'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className='flex justify-center items-center mt-5'>
                               <Button>Get Started</Button>
                         </div>

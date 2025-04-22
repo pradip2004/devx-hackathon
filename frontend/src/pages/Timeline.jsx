@@ -18,9 +18,9 @@ const TimelineItem = ({ index, progress, text, date }) => {
       )
 
       return (
-            <div className="relative" ref={circleRef}>
+            <div className="relative flex flex-col md:block" ref={circleRef}>
                   {/* Circle */}
-                  <div className="w-12 h-12 rounded-full border-2 border-white relative">
+                  <div className="w-12 h-12 rounded-full border-2 border-white relative z-10">
                         <motion.div
                               className="absolute inset-1 rounded-full bg-purple-600"
                               style={{ scale: fillProgress }}
@@ -29,7 +29,7 @@ const TimelineItem = ({ index, progress, text, date }) => {
 
                   {/* Text Content */}
                   <motion.div
-                        className="absolute -top-24 left-1/2 -translate-x-1/2 w-48 text-center"
+                        className="md:absolute md:-top-24 md:left-1/2 md:-translate-x-1/2 w-full md:w-48 text-left md:text-center mt-4 md:mt-0"
                         style={{ opacity: textOpacity }}
                   >
                         <h3 className="text-white text-xl font-bold mb-2">{text}</h3>
@@ -43,12 +43,12 @@ const Timeline = () => {
       const containerRef = useRef(null)
       const { scrollYProgress } = useScroll({
             target: containerRef,
-            offset: ["0.1 end", "0.5 start"]
+            offset: ["0.1 end", "0.8 start"]
       })
 
       const lineProgress = useTransform(
             scrollYProgress,
-            [0.1, 0.9],
+            [0.1, 0.8],
             ["0%", "100%"]
       )
 
@@ -68,13 +68,13 @@ const Timeline = () => {
       ]
 
       return (
-            <div className='w-full min-h-screen bg-black relative' ref={containerRef} >
+            <div className='w-full min-h-screen bg-black relative flex items-center justify-center' ref={containerRef} >
                    <div className='absolute inset-0 bg-[radial-gradient(35%_35%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36,0.5)_78%,transparent)]'></div>
-                  <div className="container mx-auto px-4 py-20">
+                  <div className="container mx-auto px-4 py-20 relative z-10">
                         <div className='flex flex-col items-center justify-center gap-10 w-full'>
                               <Title
                                     text="Timeline"
-                                    className="text-6xl md:text-8xl font-semibold text-center text-white"
+                                    className="text-4xl sm:text-6xl md:text-8xl font-semibold text-center text-white"
                                     delay={150}
                                     animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                                     animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -85,18 +85,37 @@ const Timeline = () => {
                               />
                         </div>
 
-                        <div className="sticky mt-52 top-1/2 -translate-y-1/2">
-                              <div className="flex justify-center items-center relative py-20">
-                                    {/* Horizontal Line */}
-                                    <div className="absolute h-[2px] bg-white/20 left-0 right-0">
+                        <div className="mt-20 md:mt-52 rounded-2xl p-8 md:p-12">
+                              {/* Mobile Timeline (Vertical) */}
+                              <div className="md:hidden flex flex-col relative py-10">
+                                    <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-white/20">
                                           <motion.div
-                                                className="h-full bg-purple-600 origin-left"
-                                                style={{ scaleX: lineProgress }}
+                                                className="w-full h-full bg-purple-600 origin-top"
+                                                style={{ scale: lineProgress }}
                                           />
                                     </div>
+                                    <div className="relative flex flex-col gap-8 pl-12">
+                                          {timelineItems.map((item, index) => (
+                                                <TimelineItem
+                                                      key={index}
+                                                      index={index}
+                                                      progress={scrollYProgress}
+                                                      text={item.text}
+                                                      date={item.date}
+                                                />
+                                          ))}
+                                    </div>
+                              </div>
 
-                                    {/* Timeline Items */}
-                                    <div className="relative flex justify-between w-full max-w-3xl">
+                              {/* Desktop Timeline (Horizontal) */}
+                              <div className="hidden md:flex flex-row relative py-20">
+                                    <div className="absolute left-0 top-1/2 w-full h-[2px] -translate-y-1/2 bg-white/20">
+                                          <motion.div
+                                                className="w-full h-full bg-purple-600 origin-left"
+                                                style={{ scale: lineProgress }}
+                                          />
+                                    </div>
+                                    <div className="relative flex flex-row justify-between w-full max-w-5xl mx-auto">
                                           {timelineItems.map((item, index) => (
                                                 <TimelineItem
                                                       key={index}

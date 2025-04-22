@@ -4,7 +4,7 @@ import RotatingText from '../components/RotatingText'
 
 const Line = () => {
       return (
-            <div className='w-full h-screen flex flex-col items-center justify-center p-32 relative'>
+            <div className='w-full h-screen flex flex-col items-center justify-center p-8 md:p-32 relative font-family-winky'>
                   <div className='absolute inset-0 bg-[radial-gradient(55%_55%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36,0.5)_78%,transparent)]'></div>
                   <ScrollReveal
                         baseOpacity={0}

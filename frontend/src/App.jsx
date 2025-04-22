@@ -8,6 +8,9 @@ import Theme from './pages/Theme'
 import Prize from './pages/Prize'
 import Timeline from './pages/Timeline'
 import Submission from './pages/Submission'
+import FAQ from './pages/FAQ'
+
+
 const App = () => {
   const items = [
     { icon: <Home size={18} className='text-white' />, label: 'Home', onClick: () => alert('Home!') },
@@ -22,7 +25,7 @@ const App = () => {
   ];
 
   return (
-    <div className='bg-black overflow-hidden relative min-h-screen'>
+    <div className='bg-black overflow-hidden relative min-h-screen pb-20 font-family-winky'>
       <Landing />
       <div className="fixed bottom-10 left-0 right-0 z-50">
         <Navbar
@@ -47,6 +50,8 @@ const App = () => {
       <Timeline />
 
       <Submission />
+
+      <FAQ />
     </div>
   )
 }
