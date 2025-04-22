@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Landing from './pages/Landing'
 import Navbar from './components/Navbar'
-import { Home, Archive, User, Settings, Sparkles } from 'lucide-react'
+import { Home, Palette, Trophy, Clock, FileText, Sparkles } from 'lucide-react'
 import { Scroller } from './components/Scroller'
 import Line from './pages/Line'
 import Theme from './pages/Theme'
@@ -12,11 +12,45 @@ import FAQ from './pages/FAQ'
 
 
 const App = () => {
+  const landingRef = useRef(null);
+  const themeRef = useRef(null);
+  const prizeRef = useRef(null);
+  const timelineRef = useRef(null);
+  const submissionRef = useRef(null);
+  const faqRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const items = [
-    { icon: <Home size={18} className='text-white' />, label: 'Home', onClick: () => alert('Home!') },
-    { icon: <Archive size={18} className='text-white' />, label: 'Archive', onClick: () => alert('Archive!') },
-    { icon: <User size={18} className='text-white' />, label: 'Profile', onClick: () => alert('Profile!') },
-    { icon: <Settings size={18} className='text-white' />, label: 'Settings', onClick: () => alert('Settings!') },
+    { 
+      icon: <Home size={18} className='text-white' />, 
+      label: 'Home', 
+      onClick: () => scrollToSection(landingRef) 
+    },
+    { 
+      icon: <Palette size={18} className='text-white' />, 
+      label: 'Theme', 
+      onClick: () => scrollToSection(themeRef) 
+    },
+    { 
+      icon: <Trophy size={18} className='text-white' />, 
+      label: 'Prize', 
+      onClick: () => scrollToSection(prizeRef) 
+    },
+    { 
+      icon: <Clock size={18} className='text-white' />, 
+      label: 'Timeline', 
+      onClick: () => scrollToSection(timelineRef) 
+    },
+    { 
+      icon: <FileText size={18} className='text-white' />, 
+      label: 'Registration', 
+      onClick: () => scrollToSection(submissionRef) 
+    },
   ];
 
   
@@ -26,7 +60,9 @@ const App = () => {
 
   return (
     <div className='bg-black overflow-hidden relative min-h-screen pb-20 font-family-winky'>
-      <Landing />
+      <div ref={landingRef}>
+        <Landing />
+      </div>
       <div className="fixed bottom-10 left-0 right-0 z-50">
         <Navbar
           className=""
@@ -43,15 +79,25 @@ const App = () => {
 
       <Line />
 
-      <Theme />
+      <div ref={themeRef}>
+        <Theme />
+      </div>
 
-      <Prize />
+      <div ref={prizeRef}>
+        <Prize />
+      </div>
 
-      <Timeline />
+      <div ref={timelineRef}>
+        <Timeline />
+      </div>
 
-      <Submission />
+      <div ref={submissionRef}>
+        <Submission />
+      </div>
 
-      <FAQ />
+      <div ref={faqRef}>
+        <FAQ />
+      </div>
     </div>
   )
 }
