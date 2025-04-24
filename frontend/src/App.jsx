@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Landing from './pages/Landing'
 import Navbar from './components/Navbar'
-import { Home, Palette, Trophy, Clock, FileText, MapPin, Sparkles } from 'lucide-react'
+import { Home, Palette, Trophy, Clock, FileText } from 'lucide-react'
 import { Scroller } from './components/Scroller'
 import Line from './pages/Line'
 import Theme from './pages/Theme'
@@ -9,8 +9,8 @@ import Prize from './pages/Prize'
 import Timeline from './pages/Timeline'
 import Submission from './pages/Submission'
 import FAQ from './pages/FAQ'
-
-
+import Logo from './assets/Logo.png'
+import SofLogo from './assets/sof.png'
 
 const App = () => {
   const landingRef = useRef(null);
@@ -19,7 +19,6 @@ const App = () => {
   const timelineRef = useRef(null);
   const submissionRef = useRef(null);
   const faqRef = useRef(null);
-  const detailsRef = useRef(null);
 
   const scrollToSection = (ref) => {
     if (ref && ref.current) {
@@ -48,7 +47,6 @@ const App = () => {
       label: 'Timeline', 
       onClick: () => scrollToSection(timelineRef) 
     },
- 
     { 
       icon: <FileText size={18} className='text-white' />, 
       label: 'Registration', 
@@ -56,9 +54,14 @@ const App = () => {
     },
   ];
 
-  
   const scrollerTexts = [
-    ['sponsor', 'name', <div className="inline-block w-10 h-10 bg-purple-500 rounded-full mx-1"></div>]
+    [
+      <div className="flex items-center justify-center gap-8 px-4">
+        <img src={Logo} alt="Logo" className="h-32 w-auto object-contain" />
+        <div className="inline-block w-10 h-10 bg-purple-500/50 rounded-full"></div>
+        <img src={SofLogo} alt="SOF Logo" className="h-32 w-auto object-contain" />
+      </div>
+    ]
   ];
 
   return (
@@ -75,10 +78,12 @@ const App = () => {
           magnification={70}
         />
       </div>
-      <Scroller
-        texts={scrollerTexts}
-        className="text-white my-10"
-      />
+      <div className="w-full overflow-hidden">
+        <Scroller
+          texts={scrollerTexts}
+          className="text-white my-10"
+        />
+      </div>
 
       <Line />
 

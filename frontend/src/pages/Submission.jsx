@@ -78,17 +78,17 @@ const Submission = () => {
             <div className='absolute inset-0 bg-[radial-gradient(35%_35%_at_center_center,rgb(140,69,255,0.5)_15%,rgb(14,0,36,0.5)_78%,transparent)]'></div>
             {!submissionStatus ? (
                 <div className="relative z-10 container mx-auto px-4 py-6 md:py-12 w-full">
-                    <Stepper
-                        initialStep={1}
-                        onStepChange={(step) => {
-                            console.log(step);
-                        }}
+<Stepper
+  initialStep={1}
+  onStepChange={(step) => {
+    console.log(step);
+  }}
                         onFinalStepCompleted={() => setSubmissionStatus(true)}
-                        backButtonText="Previous"
-                        nextButtonText="Next"
-                    >
+  backButtonText="Previous"
+  nextButtonText="Next"
+>
                         {/* Step 1: Team Leader Details */}
-                        <Step>
+  <Step>
                             <div className="w-full backdrop-blur-lg bg-black/30 p-4 md:p-8 rounded-2xl border border-white/10">
                                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Team Registration</h2>
                                 <div className="space-y-4 md:space-y-6">
@@ -174,10 +174,10 @@ const Submission = () => {
                                     </div>
                                 </div>
                             </div>
-                        </Step>
+  </Step>
 
                         {/* Step 2: Team Members */}
-                        <Step>
+  <Step>
                             <div className="w-full">
                                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Team Members</h2>
 
@@ -266,10 +266,10 @@ const Submission = () => {
                                     </button>
                                 )}
                             </div>
-                        </Step>
+  </Step>
 
                         {/* Step 3: Rules and Terms */}
-                        <Step>
+  <Step>
                             <div className="w-full backdrop-blur-lg bg-black/30 p-4 md:p-8 rounded-2xl border border-white/10">
                                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Rules & Terms</h2>
 
@@ -318,8 +318,8 @@ const Submission = () => {
                                     </div>
                                 </div>
                             </div>
-                        </Step>
-                    </Stepper>
+  </Step>
+</Stepper>
                 </div>
             ) : (
                 <div className='flex flex-col items-center justify-center min-h-screen relative'>
