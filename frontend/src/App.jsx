@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Landing from './pages/Landing'
 import Navbar from './components/Navbar'
 import { Home, Palette, Trophy, Clock, FileText } from 'lucide-react'
-import { Scroller } from './components/Scroller'
+import Scroller from './components/Scroller'
 import Line from './pages/Line'
 import Theme from './pages/Theme'
 import Prize from './pages/Prize'
@@ -27,42 +27,51 @@ const App = () => {
   };
 
   const items = [
-    { 
-      icon: <Home size={18} className='text-white' />, 
-      label: 'Home', 
-      onClick: () => scrollToSection(landingRef) 
+    {
+      icon: <Home size={18} className='text-white' />,
+      label: 'Home',
+      onClick: () => scrollToSection(landingRef)
     },
-    { 
-      icon: <Palette size={18} className='text-white' />, 
-      label: 'Theme', 
-      onClick: () => scrollToSection(themeRef) 
+    {
+      icon: <Palette size={18} className='text-white' />,
+      label: 'Theme',
+      onClick: () => scrollToSection(themeRef)
     },
-    { 
-      icon: <Trophy size={18} className='text-white' />, 
-      label: 'Prize', 
-      onClick: () => scrollToSection(prizeRef) 
+    {
+      icon: <Trophy size={18} className='text-white' />,
+      label: 'Prize',
+      onClick: () => scrollToSection(prizeRef)
     },
-    { 
-      icon: <Clock size={18} className='text-white' />, 
-      label: 'Timeline', 
-      onClick: () => scrollToSection(timelineRef) 
+    {
+      icon: <Clock size={18} className='text-white' />,
+      label: 'Timeline',
+      onClick: () => scrollToSection(timelineRef)
     },
-    { 
-      icon: <FileText size={18} className='text-white' />, 
-      label: 'Registration', 
-      onClick: () => scrollToSection(submissionRef) 
+    {
+      icon: <FileText size={18} className='text-white' />,
+      label: 'Registration',
+      onClick: () => scrollToSection(submissionRef)
     },
   ];
 
   const scrollerTexts = [
     [
-      <div className="flex items-center justify-center gap-8 px-4">
+      <div className=" flex items-center justify-center gap-8 px-4">
         <img src={Logo} alt="Logo" className="h-32 w-auto object-contain" />
         <div className="inline-block w-10 h-10 bg-purple-500/50 rounded-full"></div>
         <img src={SofLogo} alt="SOF Logo" className="h-32 w-auto object-contain" />
+        <div className="inline-block w-10 h-10 bg-purple-500/50 rounded-full"></div>
+        <img src={Logo} alt="Logo" className="h-32 w-auto object-contain" />
+        <div className="inline-block w-10 h-10 bg-purple-500/50 rounded-full"></div>
+        <img src={SofLogo} alt="SOF Logo" className="h-32 w-auto object-contain" />
+        <div className="inline-block w-10 h-10 bg-purple-500/50 rounded-full"></div>
+        <img src={SofLogo} alt="SOF Logo" className="h-32 w-auto object-contain" />
+        <div className="inline-block w-10 h-10 bg-purple-500/50 rounded-full"></div>
       </div>
     ]
   ];
+
+
 
   return (
     <div className='bg-black overflow-hidden relative min-h-screen pb-20 font-family-winky'>
@@ -84,6 +93,7 @@ const App = () => {
           className="text-white my-10"
         />
       </div>
+
 
       <Line />
 

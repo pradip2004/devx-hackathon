@@ -128,40 +128,25 @@ export const Scroller = ({
   }
 
   return (
-    <section className="relative [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-      {texts.map((text, index) => {
-        let displayContent;
-        
-        if (Array.isArray(text)) {
-          displayContent = text.map((item, i) => {
-            if (item && typeof item === 'object' && 'type' in item) {
-              return <span key={i} className="ml-5">{item}</span>;
-            }
-            return <span key={i} className="ml-5">{item}</span>;
-          });
-        } else {
-          displayContent = text;
-        }
-        
-        return (
-          <VelocityText
-            key={index}
-            className={className}
-            baseVelocity={index % 2 !== 0 ? -velocity : velocity}
-            scrollContainerRef={scrollContainerRef}
-            damping={damping}
-            stiffness={stiffness}
-            numCopies={numCopies}
-            velocityMapping={velocityMapping}
-            parallaxClassName={parallaxClassName}
-            scrollerClassName={scrollerClassName}
-            parallaxStyle={parallaxStyle}
-            scrollerStyle={scrollerStyle}
-          >
-            {displayContent}&nbsp;
-          </VelocityText>
-        );
-      })}
+    <section>
+      {texts.map((text, index) => (
+        <VelocityText
+          key={index}
+          className={className}
+          baseVelocity={index % 2 !== 0 ? -velocity : velocity}
+          scrollContainerRef={scrollContainerRef}
+          damping={damping}
+          stiffness={stiffness}
+          numCopies={numCopies}
+          velocityMapping={velocityMapping}
+          parallaxClassName={parallaxClassName}
+          scrollerClassName={scrollerClassName}
+          parallaxStyle={parallaxStyle}
+          scrollerStyle={scrollerStyle}
+        >
+          {text}&nbsp;
+        </VelocityText>
+      ))}
     </section>
   );
 };
