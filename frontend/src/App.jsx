@@ -67,7 +67,7 @@ const App = () => {
   return (
     <div className='bg-black overflow-hidden relative min-h-screen pb-20 font-family-winky'>
       <div ref={landingRef}>
-        <Landing />
+        <Landing onRegisterClick={() => scrollToSection(submissionRef)} />
       </div>
       <div className="fixed bottom-10 left-0 right-0 z-50">
         <Navbar

@@ -4,7 +4,7 @@ import starBg from '../assets/stars.png'
 import { motion } from 'framer-motion'
 import hackathonPDF from '../assets/DevXplosion_Hackathon_by_GDG_TIU.pdf'
 
-const Landing = () => {
+const Landing = ({ onRegisterClick }) => {
       const handleDownloadPDF = () => {
             window.open(hackathonPDF, '_blank');
       };
@@ -64,7 +64,7 @@ const Landing = () => {
                         <h1 className='text-5xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138))] text-transparent bg-clip-text font-family-quicksand uppercase'>DevXplosion</h1>
                         <p className='text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto font-family-winky'>Join the 24-hour innovation sprint and build solutions for tomorrow's challenges!</p>
                         <div className='flex justify-center items-center mt-5 gap-4'>
-                              <Button>Register Now</Button>
+                              <Button onClick={onRegisterClick}>Register Now</Button>
                               <Button onClick={handleDownloadPDF}>Details</Button>
                         </div>
                   </div>
