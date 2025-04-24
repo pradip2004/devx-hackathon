@@ -7,13 +7,13 @@ const TimelineItem = ({ index, progress, text, date }) => {
 
       const fillProgress = useTransform(
             progress,
-            [0.1, 0.3 * (index + 1)],
+            [0.1, 0.25 * (index + 1)],
             ["0%", "100%"]
       )
 
       const textOpacity = useTransform(
             progress,
-            [0.1 + (0.3 * index), 0.1 + (0.3 * (index + 0.5))],
+            [0.1 + (0.25 * index), 0.1 + (0.25 * (index + 0.5))],
             [0, 1]
       )
 
@@ -43,27 +43,31 @@ const Timeline = () => {
       const containerRef = useRef(null)
       const { scrollYProgress } = useScroll({
             target: containerRef,
-            offset: ["0.1 end", "0.8 start"]
+            offset: ["0.1 end", "0.6 start"]
       })
 
       const lineProgress = useTransform(
             scrollYProgress,
-            [0.1, 0.8],
+            [0.1, 0.6],
             ["0%", "100%"]
       )
 
       const timelineItems = [
             {
                   text: "Registration Starts",
-                  date: "March 1, 2024"
+                  date: "April 25, 2025"
             },
             {
-                  text: "Round 1",
-                  date: "March 15, 2024"
+                  text: "Registration Ends",
+                  date: "May 1, 2025"
+            },
+            {
+                  text: "Round 1 (Idea Submission)",
+                  date: "May 1, 2025"
             },
             {
                   text: "Final Show Down",
-                  date: "March 17, 2024"
+                  date: "May 6, 2025"
             }
       ]
 

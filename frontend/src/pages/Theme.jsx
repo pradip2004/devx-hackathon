@@ -8,21 +8,30 @@ import { Code, Star } from 'lucide-react'
 const Theme = () => {
       const themes = [
             {
-                  title: 'AI & ML',
-                  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+                  title: 'AI/ML',
+                  description: 'Develop solutions that can learn and make decisions from data. From predictive analytics to computer vision, AI/ML enables smarter applications in healthcare, finance, security, and more.',
                   icon: <Code className='text-white' size={50}/>
             },
             {
-                  title: 'AI & ML',
-                  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+                  title: 'Blockchain & Web 3.0',
+                  description: 'Build decentralized applications that enable secure transactions and data sharing. From smart contracts to NFTs, blockchain technology is transforming industries from finance to supply chain management.',
                   icon: <Code className='text-white' size={50}/>
             },
             {
-                  title: 'AI & ML',
-                  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+                  title: 'Health Tech',
+                  description: 'Create solutions that improve healthcare delivery and patient outcomes. From telemedicine to wearable devices, health tech is transforming the way we care for ourselves and each other.',
                   icon: <Code className='text-white' size={50}/>
             },
-           
+            {
+                  title: 'Open Innovation',
+                  description: 'Explore new ideas and technologies that can transform industries. From open source software to crowdsourced solutions, open innovation is driving progress in every sector.',
+                  icon: <Code className='text-white' size={50}/>
+            },
+            {
+                  title: 'Smart Cities',
+                  description: 'Design solutions that make cities more efficient and sustainable. From smart traffic to waste management, smart cities are transforming the way we live and work.',
+                  icon: <Code className='text-white' size={50}/>
+            }
             
       ]
       return (

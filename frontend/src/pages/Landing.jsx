@@ -2,8 +2,12 @@ import React from 'react'
 import Button from '../components/Button'
 import starBg from '../assets/stars.png'
 import { motion } from 'framer-motion'
+import hackathonPDF from '../assets/DevXplosion_Hackathon_by_GDG_TIU.pdf'
 
 const Landing = () => {
+      const handleDownloadPDF = () => {
+            window.open(hackathonPDF, '_blank');
+      };
 
       return (
             <section className='h-[492px] md:h-[700px] w-full flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]' style={{
@@ -57,10 +61,11 @@ const Landing = () => {
                         <div className="absolute h-2 w-2 left-full bg-white/20 rounded-full top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                   </motion.div>
                   <div className=' w-full h-full flex flex-col  items-center justify-center relative mt-16'>
-                        <h1 className='text-5xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138))] text-transparent bg-clip-text font-family-quicksand uppercase'>Hackathon</h1>
-                        <p className='text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto font-family-winky'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <div className='flex justify-center items-center mt-5'>
-                              <Button>Get Started</Button>
+                        <h1 className='text-5xl md:text-[168px] md:leading-none font-semibold tracking-tighter bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138))] text-transparent bg-clip-text font-family-quicksand uppercase'>DevXplosion</h1>
+                        <p className='text-lg md:text-xl text-white/70 mt-5 text-center max-w-xl mx-auto font-family-winky'>Join the 24-hour innovation sprint and build solutions for tomorrow's challenges!</p>
+                        <div className='flex justify-center items-center mt-5 gap-4'>
+                              <Button>Register Now</Button>
+                              <Button onClick={handleDownloadPDF}>Details</Button>
                         </div>
                   </div>
             </section>

@@ -4,10 +4,15 @@ const Button = ({
       color = "oklch(62.7% 0.265 303.9)",
       speed = "4s",
       children,
+      onClick,
       ...rest
     }) => {
       return (
-        <Component className={`relative inline-block py-[1px] overflow-hidden rounded-[20px] ${className}`} {...rest}>
+        <Component 
+          className={`relative inline-block py-[1px] overflow-hidden rounded-[20px] ${className}`} 
+          onClick={onClick}
+          {...rest}
+        >
           <div
             className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
             style={{

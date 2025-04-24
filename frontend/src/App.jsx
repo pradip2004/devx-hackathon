@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Landing from './pages/Landing'
 import Navbar from './components/Navbar'
-import { Home, Palette, Trophy, Clock, FileText, Sparkles } from 'lucide-react'
+import { Home, Palette, Trophy, Clock, FileText, MapPin, Sparkles } from 'lucide-react'
 import { Scroller } from './components/Scroller'
 import Line from './pages/Line'
 import Theme from './pages/Theme'
@@ -11,6 +11,7 @@ import Submission from './pages/Submission'
 import FAQ from './pages/FAQ'
 
 
+
 const App = () => {
   const landingRef = useRef(null);
   const themeRef = useRef(null);
@@ -18,6 +19,7 @@ const App = () => {
   const timelineRef = useRef(null);
   const submissionRef = useRef(null);
   const faqRef = useRef(null);
+  const detailsRef = useRef(null);
 
   const scrollToSection = (ref) => {
     if (ref && ref.current) {
@@ -46,6 +48,7 @@ const App = () => {
       label: 'Timeline', 
       onClick: () => scrollToSection(timelineRef) 
     },
+ 
     { 
       icon: <FileText size={18} className='text-white' />, 
       label: 'Registration', 

@@ -12,12 +12,11 @@ const Line = () => {
                         baseRotation={5}
                         blurStrength={10}
                   >
-                        This hackathon is a great opportunity to learn about the latest trends in the industry.
-                        Hosted by GDG TIU, it's a great way to get started with coding and build your skills.
+                        Join the DevXplosion by GDG TIU for an exciting 24-hour coding challenge where bright minds come together to solve real-world problems! Focus areas include AI/ML, Blockchain & Web 3.0, Health Tech, Open Innovation, and Smart Cities. Collaborate, create, and compete for amazing prizes while making an impact in the tech world. Ready to innovate? Register now and build solutions for tomorrow’s challenges!
                   </ScrollReveal>
                   <div className='flex items-center justify-center gap-5 relative text-white text-4xl font-bold uppercase'>
-                        Join <RotatingText
-                              texts={['biggest', 'innovative', 'Creative', 'Hackathon']}
+                        Showcase your Skills in <RotatingText
+                              texts={['AI/ML', 'Blockchain & Web 3.0', 'Health Tech', 'Open Innovation', 'Smart Cities']}
                               mainClassName="px-2 sm:px-2 md:px-3 bg-purple-500 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                               staggerFrom={"last"}
                               initial={{ y: "100%" }}
